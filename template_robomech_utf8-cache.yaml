@@ -1,0 +1,1319 @@
+version: 0.12.2
+filePath: template_robomech_utf8.tex
+options:
+  $BIBINPUTS:
+    - $ROOTDIR
+    - $ROOTDIR/$OUTDIR
+    - ''
+  $TEXINPUTS:
+    - $ROOTDIR
+    - $ROOTDIR/$OUTDIR
+    - ''
+  bibtexEngine: bibtex
+  cleanPatterns:
+    - '**/*.aux'
+    - '**/*.aux.bak'
+    - '**/*.bbl'
+    - '**/*.bcf'
+    - '**/*.blg'
+    - '**/*.dvi'
+    - '**/*.fdb_latexmk'
+    - '**/*.fls'
+    - '**/*.idx'
+    - '**/*.idx.bak'
+    - '**/*.ilg'
+    - '**/*.ind'
+    - '**/*.lof'
+    - '**/*.log'
+    - '**/*.lol'
+    - '**/*.lot'
+    - '**/*.nav'
+    - '**/*.out'
+    - '**/*.pdf'
+    - '**/*.ps'
+    - '**/*.snm'
+    - '**/*.synctex.gz'
+    - '**/*.toc'
+    - '/**/_minted-${JOB}'
+    - '/${OUTDIR}/sage-plots-for-${JOB}.tex'
+    - /missfont.log
+    - /texput.log
+    - /texput.aux
+  dviToPdfEngine: xdvipdfmx
+  engine: uplatex
+  epstopdfBoundingBox: default
+  epstopdfOutputPath: $DIR_0/$NAME_0.pdf
+  indexAutomaticRanges: true
+  indexEngine: makeindex
+  indexOrdering: word
+  indexSorting: default
+  knitrConcordance: true
+  knitrOutputPath: $JOB.tex
+  lhs2texStyle: poly
+  literateAgdaEngine: agda
+  literateHaskellEngine: lhs2TeX
+  loadCache: true
+  loadUserOptions: true
+  outputFormat: pdf
+  phaseCycles: 20
+  pweaveCacheDirectory: pweave-cache-for-$JOB
+  pweaveFigureDirectory: pweave-figures-for-$JOB
+  pweaveKernel: python3
+  pweaveOutputFormat: tex
+  pweaveOutputPath: $JOB.tex
+  saveCache: true
+  severity: info
+  validateCache: true
+  synctex: true
+  copyTargetsToRoot: true
+  outputDirectory: ''
+  intermediatePostScript: false
+  $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
+files:
+  dicy-instance.yaml-ParsedYAML:
+    timeStamp: 2019-02-18T13:38:07.656Z
+    jobNames: []
+    value:
+      severity: info
+    type: ParsedYAML
+  dicy.yaml-ParsedYAML:
+    jobNames: []
+    type: ParsedYAML
+  template_robomech_utf8.yaml-ParsedYAML:
+    jobNames: []
+    type: ParsedYAML
+  template_robomech_utf8.tex-ParsedLaTeXMagic:
+    timeStamp: 2019-02-13T06:29:29.470Z
+    jobNames: []
+    value: {}
+    type: ParsedLaTeXMagic
+  /Users/koki/Library/Application Support/dicy/config.yaml-ParsedYAML:
+    timeStamp: 2019-02-13T06:29:29.462Z
+    jobNames: []
+    value:
+      synctex: true
+      engine: uplatex
+      severity: warning
+      copyTargetsToRoot: true
+      outputDirectory: ''
+      outputFormat: pdf
+      cleanPatterns:
+        - '**/*.aux'
+        - '**/*.aux.bak'
+        - '**/*.bbl'
+        - '**/*.bcf'
+        - '**/*.blg'
+        - '**/*.dvi'
+        - '**/*.fdb_latexmk'
+        - '**/*.fls'
+        - '**/*.idx'
+        - '**/*.idx.bak'
+        - '**/*.ilg'
+        - '**/*.ind'
+        - '**/*.lof'
+        - '**/*.log'
+        - '**/*.lol'
+        - '**/*.lot'
+        - '**/*.nav'
+        - '**/*.out'
+        - '**/*.pdf'
+        - '**/*.ps'
+        - '**/*.snm'
+        - '**/*.synctex.gz'
+        - '**/*.toc'
+        - '/**/_minted-${JOB}'
+        - '/${OUTDIR}/sage-plots-for-${JOB}.tex'
+        - /missfont.log
+        - /texput.log
+        - /texput.aux
+      intermediatePostScript: false
+      $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
+    type: ParsedYAML
+  template_robomech_utf8.tex:
+    timeStamp: 2019-02-18T14:59:02.260Z
+    jobNames: []
+    hash: 22XWowHCH34BkfiAeiiXgAoHCNjOaXB8oyThnP4SREw=
+    type: LaTeX
+    subType: jsarticle
+  /Users/koki/Library/Application Support/dicy/config.yaml:
+    timeStamp: 2019-02-18T13:38:07.687Z
+    jobNames: []
+    type: YAML
+  x.y-Nil:
+    jobNames: []
+    type: Nil
+  template_robomech_utf8.log:
+    timeStamp: 2019-02-18T14:57:28.181Z
+    jobNames: []
+    hash: S/GXc7fdyYMPwflKNLyVeVmSjenAqzIiPA04uDOr4Vs=
+    type: LaTeXLog
+    subType: e-upTeX
+  template_robomech_utf8.fls-ParsedFileListing:
+    jobNames: []
+    type: ParsedFileListing
+  template_robomech_utf8.log-ParsedLaTeXLog:
+    timeStamp: 2019-02-18T14:56:25.550Z
+    jobNames: []
+    value:
+      messages:
+        - severity: error
+          name: e-upTeX
+          text: >-
+            You are running upLaTeX Please use pLaTeX instead, or add 'uplatex'
+            to the class option list.
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 12
+              end: 15
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 236
+              end: 236
+          category: Class jsarticle
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \rmfamily
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 466
+              end: 466
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 29
+              end: 29
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \sffamily
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 469
+              end: 469
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 30
+              end: 30
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \ttfamily
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 472
+              end: 472
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 31
+              end: 31
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \textmc
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 476
+              end: 476
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 32
+              end: 32
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \textgt
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 478
+              end: 478
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 33
+              end: 33
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Overwriting symbol font `mincho' in version `bold' JY2/mc/m/n -->
+            JY2/gt/m/n.
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 540
+              end: 540
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 35
+              end: 36
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/mc/m/n' will be scaled to size 9.24683pt.
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 731
+              end: 731
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 37
+              end: 38
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 9.24683pt.
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 731
+              end: 731
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 39
+              end: 40
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/mc/m/n' will be scaled to size 7.39746pt.
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 884
+              end: 884
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 42
+              end: 43
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 7.39746pt.
+          source:
+            file: >-
+              /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+            range:
+              start: 884
+              end: 884
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 44
+              end: 45
+        - name: e-upTeX
+          severity: info
+          text: 'jslogo 2017/02/24 okumura, texjporg'
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 61
+              end: 61
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \TeX
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty
+            range:
+              start: 94
+              end: 94
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 62
+              end: 62
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \LaTeX
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty
+            range:
+              start: 147
+              end: 147
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 63
+              end: 63
+        - severity: info
+          name: e-upTeX
+          category: LaTeX
+          text: Redefining \LaTeXe
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty
+            range:
+              start: 200
+              end: 200
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 64
+              end: 64
+        - name: e-upTeX
+          severity: info
+          text: 'graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)'
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 74
+              end: 74
+        - name: e-upTeX
+          severity: info
+          text: keyval 2014/10/28 v1.15 key=value parser (DPC)
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 76
+              end: 76
+        - name: e-upTeX
+          severity: info
+          text: 'graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)'
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 79
+              end: 79
+        - name: e-upTeX
+          severity: info
+          text: trig 2016/01/03 v1.10 sin cos tan (DPC)
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 81
+              end: 81
+        - severity: info
+          name: e-upTeX
+          category: Package graphics
+          text: 'Driver file: dvips.def'
+          source:
+            file: /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+            range:
+              start: 99
+              end: 99
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 85
+              end: 85
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for OML/cmm/m/it ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 94
+              end: 95
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for T1/cmr/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 96
+              end: 97
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for OT1/cmr/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 98
+              end: 99
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for OMS/cmsy/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 100
+              end: 101
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for OMX/cmex/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 102
+              end: 103
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for U/cmr/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 104
+              end: 105
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for JY2/mc/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 106
+              end: 107
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Checking defaults for JT2/mc/m/n ... okay
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 108
+              end: 109
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/mc/m/n' will be scaled to size 13.31541pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 110
+              end: 111
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 13.31541pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 112
+              end: 113
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JT2/mc/bx/n' in size <14.4> not available Font shape
+            `JT2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 114
+              end: 115
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/gt/m/n' will be scaled to size 13.31541pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 116
+              end: 117
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JY2/mc/bx/n' in size <14.4> not available Font shape
+            `JY2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 118
+              end: 119
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/gt/m/n' will be scaled to size 13.31541pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 120
+              end: 121
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/mc/m/n' will be scaled to size 11.09619pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 122
+              end: 123
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 11.09619pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 124
+              end: 125
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JT2/mc/bx/n' in size <12> not available Font shape
+            `JT2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 126
+              end: 127
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/gt/m/n' will be scaled to size 11.09619pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 128
+              end: 129
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JY2/mc/bx/n' in size <12> not available Font shape
+            `JY2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 130
+              end: 131
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/gt/m/n' will be scaled to size 11.09619pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 132
+              end: 133
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: External font `cmex10' loaded for size <7>.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 134
+              end: 135
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: External font `cmex10' loaded for size <5>.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 136
+              end: 137
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 6.47278pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 138
+              end: 139
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 4.62341pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 140
+              end: 141
+        - severity: error
+          name: e-upTeX
+          text: 'Missing number, treated as zero'
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 142
+              end: 143
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+        - severity: error
+          name: e-upTeX
+          text: Illegal unit of measure (pt inserted)
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 152
+              end: 153
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/mc/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 165
+              end: 166
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 167
+              end: 168
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JT2/mc/m/it' in size <9> not available Font shape
+            `JT2/mc/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 169
+              end: 170
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/mc/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 171
+              end: 172
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JY2/mc/m/it' in size <9> not available Font shape
+            `JY2/mc/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 173
+              end: 174
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 175
+              end: 176
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JT2/mc/bx/it' in size <9> not available Font shape
+            `JT2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 177
+              end: 178
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/gt/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 179
+              end: 180
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JY2/mc/bx/it' in size <9> not available Font shape
+            `JY2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 181
+              end: 182
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/gt/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 183
+              end: 184
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JT2/mc/bx/n' in size <9> not available Font shape
+            `JT2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 185
+              end: 186
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/gt/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 187
+              end: 188
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JY2/mc/bx/n' in size <9> not available Font shape
+            `JY2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 189
+              end: 190
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/gt/m/n' will be scaled to size 8.32214pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 28
+              end: 28
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 191
+              end: 192
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JT2/mc/bx/n' in size <10> not available Font shape
+            `JT2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 33
+              end: 33
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 193
+              end: 194
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JT2/gt/m/n' will be scaled to size 9.24683pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 33
+              end: 33
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 195
+              end: 196
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `JY2/mc/bx/n' in size <10> not available Font shape
+            `JY2/gt/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 33
+              end: 33
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 197
+              end: 198
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/gt/m/n' will be scaled to size 9.24683pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 33
+              end: 33
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 199
+              end: 200
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: External font `cmex10' loaded for size <9>.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 63
+              end: 63
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 203
+              end: 204
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: External font `cmex10' loaded for size <6>.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 63
+              end: 63
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 205
+              end: 206
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 5.5481pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 63
+              end: 63
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 207
+              end: 208
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Try loading font information for OMS+cmr
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 191
+              end: 191
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 221
+              end: 221
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: >-
+            Font shape `OMS/cmr/m/n' in size <9> not available Font shape
+            `OMS/cmsy/m/n' tried instead.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 191
+              end: 191
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 226
+              end: 227
+      inputs: []
+      outputs:
+        - template_robomech_utf8.dvi
+      calls: []
+    type: ParsedLaTeXLog
+  template_robomech_utf8.dvi:
+    timeStamp: 2019-02-18T14:59:02.769Z
+    jobNames: []
+    type: DeviceIndependentFile
+  template_robomech_utf8.pdf:
+    timeStamp: 2019-02-18T14:59:07.268Z
+    jobNames: []
+    hash: Ww+jY0CtrcCsUcUMtcmWYhN0bY9lUH7DvwgPH8LNEfc=
+    type: PortableDocumentFormat
+rules:
+  - name: ApplyOptions
+    command: load
+    phase: initialize
+    parameters: []
+    inputs:
+      - file: dicy.yaml-ParsedYAML
+        type: default
+      - file: template_robomech_utf8.yaml-ParsedYAML
+        type: default
+      - file: template_robomech_utf8.tex-ParsedLaTeXMagic
+        type: default
+      - file: dicy-instance.yaml-ParsedYAML
+        type: default
+      - file: /Users/koki/Library/Application Support/dicy/config.yaml-ParsedYAML
+        type: default
+    outputs: []
+  - name: LoadAndValidateCache
+    command: load
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: Migrate
+    command: load
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ApplyOptions
+    command: load
+    phase: execute
+    parameters: []
+    inputs:
+      - file: dicy.yaml-ParsedYAML
+        type: default
+      - file: template_robomech_utf8.yaml-ParsedYAML
+        type: default
+      - file: template_robomech_utf8.tex-ParsedLaTeXMagic
+        type: default
+      - file: dicy-instance.yaml-ParsedYAML
+        type: default
+      - file: /Users/koki/Library/Application Support/dicy/config.yaml-ParsedYAML
+        type: default
+    outputs: []
+  - name: ParseOptionsFile
+    command: load
+    phase: execute
+    parameters: []
+    inputs:
+      - file: /Users/koki/Library/Application Support/dicy/config.yaml
+        type: default
+    outputs:
+      - file: /Users/koki/Library/Application Support/dicy/config.yaml-ParsedYAML
+        type: default
+  - name: ParseLaTeXMagic
+    command: load
+    phase: execute
+    parameters:
+      - template_robomech_utf8.tex
+    inputs:
+      - file: template_robomech_utf8.tex
+        type: default
+    outputs:
+      - file: template_robomech_utf8.tex-ParsedLaTeXMagic
+        type: default
+  - name: AssignJobNames
+    command: load
+    phase: finalize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: FindLogFiles
+    command: build
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: LaTeX
+    command: build
+    phase: execute
+    parameters:
+      - template_robomech_utf8.tex
+    inputs:
+      - file: template_robomech_utf8.tex
+        type: default
+      - file: template_robomech_utf8.fls-ParsedFileListing
+        type: default
+      - file: template_robomech_utf8.log-ParsedLaTeXLog
+        type: default
+    outputs:
+      - file: template_robomech_utf8.dvi
+        type: default
+  - name: ParseLaTeXLog
+    command: build
+    phase: execute
+    parameters:
+      - template_robomech_utf8.log
+    inputs:
+      - file: template_robomech_utf8.log
+        type: default
+    outputs:
+      - file: template_robomech_utf8.log-ParsedLaTeXLog
+        type: default
+  - name: DviToPdf
+    command: build
+    phase: execute
+    parameters:
+      - template_robomech_utf8.dvi
+    inputs:
+      - file: template_robomech_utf8.dvi
+        type: target
+    outputs:
+      - file: template_robomech_utf8.pdf
+        type: target
+  - name: LogProducedTargets
+    command: build
+    phase: finalize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: CheckForMissingBuildRule
+    command: build
+    phase: finalize
+    parameters:
+      - template_robomech_utf8.tex
+    inputs:
+      - file: template_robomech_utf8.tex
+        type: default
+    outputs: []
+  - name: FindLogFiles
+    command: log
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ParseLaTeXLog
+    command: log
+    phase: execute
+    parameters:
+      - template_robomech_utf8.log
+    inputs:
+      - file: template_robomech_utf8.log
+        type: default
+    outputs:
+      - file: template_robomech_utf8.log-ParsedLaTeXLog
+        type: default
+  - name: ReportLogMessages
+    command: log
+    phase: execute
+    parameters:
+      - template_robomech_utf8.log-ParsedLaTeXLog
+    inputs:
+      - file: template_robomech_utf8.log-ParsedLaTeXLog
+        type: default
+    outputs: []
+  - name: SaveCache
+    command: save
+    phase: execute
+    parameters: []
+    inputs: []
+    outputs: []
