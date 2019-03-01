@@ -66,9 +66,9 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
-INPUT /Users/koki/Desktop/ROBOMECH2019/fig/decisionpoint.eps
-INPUT /Users/koki/Desktop/ROBOMECH2019/fig/decisionpoint.eps
 OUTPUT template_robomech_utf8.dvi
+INPUT /Users/koki/Desktop/ROBOMECH2019/fig/decisionpoint.eps
+INPUT /Users/koki/Desktop/ROBOMECH2019/fig/decisionpoint.eps
 INPUT /Users/koki/Desktop/ROBOMECH2019/fig/sharefile.eps
 INPUT /Users/koki/Desktop/ROBOMECH2019/fig/sharefile.eps
 INPUT /Users/koki/Desktop/ROBOMECH2019/fig/example.eps
