@@ -43,7 +43,7 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 そこで本研究では環境にセンサノードを固定させるのではなく、同一空間上に存在する複数のロボットがセンサデータを取得・共有・更新を行う枠組みの提案および開発を目的としている。
 著者らはセンサデータ共有の枠組みとしてブロックチェーンを提案し、開発に着手してきた\cite{2}。
 またロボットが共有するセンサデータとして通行者情報地図（図\ref{fig: HFM}HFM:Human Frequency Map）を用いたシステムを提案し、開発を行なっている\cite{3}\cite{4}。
-図\ref{fig: proposedsystem}はその全体像を示している。
+図\ref{fig: proposedsystem}は提案システムの全体像を示している。
 複数台のロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
 しかしこのシステムにおいてHFMをロボットが取得する際、人が観測地点まで手動でロボットを移動させている。
 
@@ -261,8 +261,17 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
 観測したグリット数が試行を繰り返すごとにどのように遷移していくかをロボットの数ごとに比較を行う。
 今回ロボットの数は1$\sim$3台,試行回数$n=30,w_o=0.5,w_d=0.5$とし、シミュレーションを行なった。
 ロボットの台数によりシミュレーションを5回ずつ行い、その結果をそれぞれ平均をとったものを図\ref{fig: multirobot}のグラフにて示す。
-横軸は試行回数$n$,縦軸は観測したグリット数となっている。
+ロボットの台数によりシミュレーションを5回ずつ行い、その結果をそれぞれ平均したものを利用し台数ごとの比較を行う。
+図\ref{fig: each-multirobot}が台数ごとの結果、図\ref{fig: multirobot}が平均を取り比較した結果のグラフである。
+ともに横軸は試行回数$n$,縦軸は観測したグリット数となっている。
 
+\begin{figure}[tbh]
+ \centering
+  \includegraphics[height=50mm]{fig/each-multi-robot.eps}
+  \vspace*{-4mm}
+  \caption{それぞれの台数での結果}
+  \label{fig: each-multirobot}
+\end{figure}
 
 \begin{figure}[tbh]
  \centering
