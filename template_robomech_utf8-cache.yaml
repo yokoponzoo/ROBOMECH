@@ -130,9 +130,9 @@ files:
       $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
     type: ParsedYAML
   template_robomech_utf8.tex:
-    timeStamp: 2019-03-01T06:04:44.851Z
+    timeStamp: 2019-03-01T06:22:40.826Z
     jobNames: []
-    hash: vEqiRIZZp9RL2zchk8NWMI4kCh7JDgzIWU3a/8WWmkA=
+    hash: v2ZeLDdbsogTm+gmWUWz1Iw0v3DMT2/SxbqFvA6Eoes=
     type: LaTeX
     subType: jsarticle
   /Users/koki/Library/Application Support/dicy/config.yaml:
@@ -143,16 +143,16 @@ files:
     jobNames: []
     type: Nil
   template_robomech_utf8.log:
-    timeStamp: 2019-03-01T06:04:06.218Z
+    timeStamp: 2019-03-01T06:22:27.364Z
     jobNames: []
-    hash: 2fNUS4ZtwtrCl3a5wfs8ou+YkfzyrKm8MdnyT/otMXE=
+    hash: j5pY25Vg6LI5ETItvINhfSK6WfUdWe3DVF8zPqiH61c=
     type: LaTeXLog
     subType: e-upTeX
   template_robomech_utf8.fls-ParsedFileListing:
     jobNames: []
     type: ParsedFileListing
   template_robomech_utf8.log-ParsedLaTeXLog:
-    timeStamp: 2019-03-01T05:59:54.365Z
+    timeStamp: 2019-03-01T06:22:33.611Z
     jobNames: []
     value:
       messages:
@@ -1076,22 +1076,8 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 65
-              end: 65
-          log:
-            file: template_robomech_utf8.log
-            range:
-              start: 203
-              end: 204
-        - severity: info
-          name: e-upTeX
-          category: LaTeX Font
-          text: External font `cmex10' loaded for size <6>.
-          source:
-            file: template_robomech_utf8.tex
-            range:
-              start: 65
-              end: 65
+              start: 74
+              end: 74
           log:
             file: template_robomech_utf8.log
             range:
@@ -1100,12 +1086,12 @@ files:
         - severity: info
           name: e-upTeX
           category: LaTeX Font
-          text: Font shape `JY2/mc/m/n' will be scaled to size 5.5481pt.
+          text: External font `cmex10' loaded for size <6>.
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 65
-              end: 65
+              start: 74
+              end: 74
           log:
             file: template_robomech_utf8.log
             range:
@@ -1114,17 +1100,31 @@ files:
         - severity: info
           name: e-upTeX
           category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 5.5481pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 74
+              end: 74
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 209
+              end: 210
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
           text: Try loading font information for OMS+cmr
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 201
-              end: 201
+              start: 210
+              end: 210
           log:
             file: template_robomech_utf8.log
             range:
-              start: 224
-              end: 224
+              start: 226
+              end: 226
         - severity: info
           name: e-upTeX
           category: LaTeX Font
@@ -1134,26 +1134,26 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 201
-              end: 201
+              start: 210
+              end: 210
           log:
             file: template_robomech_utf8.log
             range:
-              start: 229
-              end: 230
+              start: 231
+              end: 232
       inputs: []
       outputs:
         - template_robomech_utf8.dvi
       calls: []
     type: ParsedLaTeXLog
   template_robomech_utf8.dvi:
-    timeStamp: 2019-03-01T06:04:45.491Z
+    timeStamp: 2019-03-01T06:22:41.338Z
     jobNames: []
     type: DeviceIndependentFile
   template_robomech_utf8.pdf:
-    timeStamp: 2019-03-01T06:04:51.939Z
+    timeStamp: 2019-03-01T06:22:46.742Z
     jobNames: []
-    hash: xGRGBhYwD2te3yT83H3yV9TD5NF+FMMWnMai5F2xK9Q=
+    hash: DNGD7HdOOU7y75IUBLBibXTVHG/Cm4Bb6C3jC9hJNZg=
     type: PortableDocumentFormat
 rules:
   - name: ApplyOptions

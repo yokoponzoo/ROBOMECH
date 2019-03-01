@@ -34,7 +34,7 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 \small
 \section{緒言}
 自律移動ロボットは測域センサやカメラなどの情報に基づき周囲の環境を認識し行動をしている。
-しかしロボット自身に搭載されているセンサデータだけでは取得する範囲に限界が存在する。
+しかしロボット自身に搭載されているセンサデータだけでは取得できる情報に限界が存在する。
 そこで空間に分散させたセンサノードから情報を取得する方法が提案されている。
 これを空間の知能化という。
 カメラを空間上に分散させロボットの人追従を行なった研究事例\cite{1}も報告されており、これによりロボットが外部のセンサ情報を利用する有用性が確認できる。
@@ -42,7 +42,8 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 
 そこで本研究では環境にセンサノードを固定させるのではなく、同一空間上に存在する複数のロボットがセンサデータを取得・共有・更新を行う枠組みの提案および開発を目的としている。
 著者らはセンサデータ共有の枠組みとしてブロックチェーンを提案し、開発に着手してきた\cite{2}。
-またロボットが共有するセンサデータとして通行者情報地図（HFM:Human Frequency Map）を用いた開発も行なっている\cite{3}\cite{4}。
+またロボットが共有するセンサデータとして通行者情報地図（図\ref{fig: HFM}HFM:Human Frequency Map）を用いたシステムを提案し、開発を行なっている\cite{3}\cite{4}。
+図\ref{fig: proposedsystem}はその全体像を示している。
 複数台のロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
 しかしこのシステムにおいてHFMをロボットが取得する際、人が観測地点まで手動でロボットを移動させている。
 
@@ -50,10 +51,18 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 また本稿ではシミュレーターを作成し、提案手法の実験を行なった。
 \begin{figure}[tbh]
  \centering
-  \includegraphics[height=55mm]{fig/HFM.eps}
+  \includegraphics[height=45mm]{fig/HFM.eps}
   \vspace*{-4mm}
   \caption{Human Frequency Map}
   \label{fig: HFM}
+\end{figure}
+
+\begin{figure}[tbh]
+ \centering
+  \includegraphics[height=50mm]{fig/proposedsystem.eps}
+  \vspace*{-4mm}
+  \caption{Proposed System}
+  \label{fig: proposedsystem}
 \end{figure}
 
 \section{HFM更新手法}
