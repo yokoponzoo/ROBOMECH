@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  18 FEB 2019 23:59
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  1 MAR 2019 13:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **template_robomech_utf8.tex
-(/Users/koki/Desktop/rmdformat2019/rmdformat/template_robomech_utf8.tex
+(/Users/koki/Desktop/ROBOMECH2019/template_robomech_utf8.tex
 pLaTeX2e <2018-12-01u02> (based on LaTeX2e <2018-12-01>)
 (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2018/12/11 jsclasses (okumura, texjporg)
@@ -64,7 +64,7 @@ LaTeX Info: Redefining \LaTeX on input line 147.
 LaTeX Info: Redefining \LaTeXe on input line 200.
 )
 \heisei=\count91
-) (/Users/koki/Desktop/rmdformat2019/rmdformat/robomech.sty
+) (/Users/koki/Desktop/ROBOMECH2019/robomech.sty
 Document Style Option 'For robomec style file.' by E.Uchibe <31 Jan 95>
 modified by ROBOMECH2014 executive committee <7 Feb 14>
 \tmptoki=\toks15
@@ -88,7 +88,7 @@ File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
-) (/Users/koki/Desktop/rmdformat2019/rmdformat/template_robomech_utf8.aux)
+) (/Users/koki/Desktop/ROBOMECH2019/template_robomech_utf8.aux)
 \openout1 = `template_robomech_utf8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -139,8 +139,8 @@ LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 28.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 28.
-/Users/koki/Desktop/rmdformat2019/rmdformat/template_robomech_utf8.tex:28: Miss
-ing number, treated as zero.
+/Users/koki/Desktop/ROBOMECH2019/template_robomech_utf8.tex:28: Missing number,
+ treated as zero.
 <to be read again> 
                    ○\BAD.
 l.28 \maketitle
@@ -149,8 +149,8 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/Users/koki/Desktop/rmdformat2019/rmdformat/template_robomech_utf8.tex:28: Ille
-gal unit of measure (pt inserted).
+/Users/koki/Desktop/ROBOMECH2019/template_robomech_utf8.tex:28: Illegal unit of
+ measure (pt inserted).
 <to be read again> 
                    ○\BAD.
 l.28 \maketitle
@@ -212,33 +212,39 @@ File: fig/decisionpoint.eps Graphic file (type eps)
 
 
 ]
+File: fig/sharefile.eps Graphic file (type eps)
+<fig/sharefile.eps>
 File: fig/example.eps Graphic file (type eps)
 <fig/example.eps>
 File: fig/n1000.eps Graphic file (type eps)
 <fig/n1000.eps>
 File: fig/n30.eps Graphic file (type eps)
 <fig/n30.eps>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 191.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 199.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 191.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 199.
+[2]
 File: fig/evaluate-grid.eps Graphic file (type eps)
-<fig/evaluate-grid.eps> [2]
+<fig/evaluate-grid.eps>
 File: fig/evaluate-distance.eps Graphic file (type eps)
 <fig/evaluate-distance.eps>
 File: fig/multi-robot.eps Graphic file (type eps)
-<fig/multi-robot.eps> [3] (/Users/koki/Desktop/rmdformat2019/rmdformat/template
-_robomech_utf8.aux) ) 
+<fig/multi-robot.eps>
+File: fig/impossible.eps Graphic file (type eps)
+<fig/impossible.eps> [3] [4
+
+] (/Users/koki/Desktop/ROBOMECH2019/template_robomech_utf8.aux) ) 
 Here is how much of TeX's memory you used:
- 946 strings out of 493215
- 12035 string characters out of 6144071
+ 954 strings out of 493215
+ 12092 string characters out of 6144071
  82317 words of memory out of 5000000
- 4969 multiletter control sequences out of 15000+600000
+ 4975 multiletter control sequences out of 15000+600000
  14050 words of font info for 68 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  25i,14n,20p,284b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template_robomech_utf8.dvi (3 pages, 19936 bytes).
+Output written on template_robomech_utf8.dvi (4 pages, 21108 bytes).
