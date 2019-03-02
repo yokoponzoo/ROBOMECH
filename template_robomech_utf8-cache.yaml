@@ -130,9 +130,9 @@ files:
       $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
     type: ParsedYAML
   template_robomech_utf8.tex:
-    timeStamp: 2019-03-02T07:43:08.896Z
+    timeStamp: 2019-03-02T07:49:13.045Z
     jobNames: []
-    hash: /NyR+l03disk8EJaFCN3S3Ab8o2vpB9wRmifF14Wfks=
+    hash: JFJXHDG46t1UEhg2tib1Kb7+Mv92mAiqeBCR2pdPJRg=
     type: LaTeX
     subType: jsarticle
   /Users/koki/Library/Application Support/dicy/config.yaml:
@@ -143,16 +143,16 @@ files:
     jobNames: []
     type: Nil
   template_robomech_utf8.log:
-    timeStamp: 2019-03-02T07:42:30.567Z
+    timeStamp: 2019-03-02T07:48:43.228Z
     jobNames: []
-    hash: Fa8ubaB+NLyEjUZ5VFSTpW+RATMc1B40HqfzU2CYSJE=
+    hash: 5t3B8YW5xkbDNJvVHqAge5tc/RRZ0h0OBv87difG1s0=
     type: LaTeXLog
     subType: e-upTeX
   template_robomech_utf8.fls-ParsedFileListing:
     jobNames: []
     type: ParsedFileListing
   template_robomech_utf8.log-ParsedLaTeXLog:
-    timeStamp: 2019-03-02T07:19:50.467Z
+    timeStamp: 2019-03-02T07:48:51.529Z
     jobNames: []
     value:
       messages:
@@ -1111,8 +1111,8 @@ files:
           log:
             file: template_robomech_utf8.log
             range:
-              start: 220
-              end: 221
+              start: 217
+              end: 218
         - severity: info
           name: e-upTeX
           category: LaTeX Font
@@ -1125,8 +1125,8 @@ files:
           log:
             file: template_robomech_utf8.log
             range:
-              start: 222
-              end: 223
+              start: 219
+              end: 220
         - severity: info
           name: e-upTeX
           category: LaTeX Font
@@ -1139,21 +1139,21 @@ files:
           log:
             file: template_robomech_utf8.log
             range:
-              start: 224
-              end: 225
+              start: 221
+              end: 222
       inputs: []
       outputs:
         - template_robomech_utf8.dvi
       calls: []
     type: ParsedLaTeXLog
   template_robomech_utf8.dvi:
-    timeStamp: 2019-03-02T07:43:09.769Z
+    timeStamp: 2019-03-02T07:49:13.748Z
     jobNames: []
     type: DeviceIndependentFile
   template_robomech_utf8.pdf:
-    timeStamp: 2019-03-02T07:43:17.656Z
+    timeStamp: 2019-03-02T07:49:22.553Z
     jobNames: []
-    hash: LfdX2qpKgL7uPA/ubvrYmm5uKLr5OT/5Heas/2/7gbI=
+    hash: /AtvdI00uqCmByoDbXbvaBBpY8iQCLuQJ56HbpUPv2U=
     type: PortableDocumentFormat
 rules:
   - name: ApplyOptions
