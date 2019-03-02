@@ -71,7 +71,7 @@ options:
   $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2019-03-01T03:37:11.196Z
+    timeStamp: 2019-03-02T05:59:21.880Z
     jobNames: []
     value:
       severity: info
@@ -130,29 +130,29 @@ files:
       $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
     type: ParsedYAML
   template_robomech_utf8.tex:
-    timeStamp: 2019-03-01T06:43:09.507Z
+    timeStamp: 2019-03-02T05:59:52.603Z
     jobNames: []
-    hash: UNyt5hfEM0FOuU73fHdaN8Ipijf+SZSUw7D1IsBdoX0=
+    hash: hcVLadtlk4Gh5jIhI4oZEyVG/uQbxCXHQVKBamZMUn4=
     type: LaTeX
     subType: jsarticle
   /Users/koki/Library/Application Support/dicy/config.yaml:
-    timeStamp: 2019-03-01T03:37:11.225Z
+    timeStamp: 2019-03-02T05:59:21.914Z
     jobNames: []
     type: YAML
   x.y-Nil:
     jobNames: []
     type: Nil
   template_robomech_utf8.log:
-    timeStamp: 2019-03-01T06:41:02.108Z
+    timeStamp: 2019-03-02T05:59:34.046Z
     jobNames: []
-    hash: mJzV7XiYBMtqFiQUE++jD0/vzexP/QgOAULHgR+eiKA=
+    hash: oh7HfRGQRVWDKNWP1mM0YUZuWzkwHNNsT30RAcLm1vE=
     type: LaTeXLog
     subType: e-upTeX
   template_robomech_utf8.fls-ParsedFileListing:
     jobNames: []
     type: ParsedFileListing
   template_robomech_utf8.log-ParsedLaTeXLog:
-    timeStamp: 2019-03-01T06:38:36.501Z
+    timeStamp: 2019-03-02T05:59:40.739Z
     jobNames: []
     value:
       messages:
@@ -1147,13 +1147,13 @@ files:
       calls: []
     type: ParsedLaTeXLog
   template_robomech_utf8.dvi:
-    timeStamp: 2019-03-01T06:43:10.047Z
+    timeStamp: 2019-03-02T05:59:53.252Z
     jobNames: []
     type: DeviceIndependentFile
   template_robomech_utf8.pdf:
-    timeStamp: 2019-03-01T06:43:16.767Z
+    timeStamp: 2019-03-02T06:00:00.280Z
     jobNames: []
-    hash: 8Ty+oX093bFnvr4hvSIKpFTf25eA8CUeCe1LWPS1WVs=
+    hash: 3WWxgoA17ykcAvDKgjoqnYnr0t1ZSdyPAZnOBlmI4a8=
     type: PortableDocumentFormat
 rules:
   - name: ApplyOptions
