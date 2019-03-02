@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  2 MAR 2019 14:59
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  2 MAR 2019 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -198,38 +198,39 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY2/gt/m/n' tried instead on input line 35.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 35.
-File: fig/HFM.eps Graphic file (type eps)
-<fig/HFM.eps>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 60.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
 File: fig/proposedsystem.eps Graphic file (type eps)
 <fig/proposedsystem.eps>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 74.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 74.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 74.
+File: fig/HFM.eps Graphic file (type eps)
+<fig/HFM.eps>
+Underfull \vbox (badness 2735) has occurred while \output is active []
+
 [1
 
 
 
 ]
-File: fig/decisionpoint.eps Graphic file (type eps)
-<fig/decisionpoint.eps>
 File: fig/sharefile.eps Graphic file (type eps)
 <fig/sharefile.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 113.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 113.
+File: fig/decisionpoint.eps Graphic file (type eps)
+<fig/decisionpoint.eps>
 File: fig/example.eps Graphic file (type eps)
-<fig/example.eps>
+<fig/example.eps> [2]
 File: fig/n1000.eps Graphic file (type eps)
-<fig/n1000.eps> [2]
+<fig/n1000.eps>
 File: fig/n30.eps Graphic file (type eps)
 <fig/n30.eps>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 210.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
 File: fig/evaluate-grid.eps Graphic file (type eps)
 <fig/evaluate-grid.eps>
 File: fig/evaluate-distance.eps Graphic file (type eps)
@@ -237,18 +238,20 @@ File: fig/evaluate-distance.eps Graphic file (type eps)
 File: fig/each-multi-robot.eps Graphic file (type eps)
 <fig/each-multi-robot.eps>
 File: fig/multi-robot.eps Graphic file (type eps)
-<fig/multi-robot.eps> [3]
-File: fig/impossible.eps Graphic file (type eps)
-<fig/impossible.eps> [4
+<fig/multi-robot.eps>
+Underfull \vbox (badness 2980) has occurred while \output is active []
 
-] (/Users/koki/src/lab/ROBOMECH2019/template_robomech_utf8.aux) ) 
+[3]
+File: fig/impossible.eps Graphic file (type eps)
+<fig/impossible.eps> [4] (/Users/koki/src/lab/ROBOMECH2019/template_robomech_ut
+f8.aux) ) 
 Here is how much of TeX's memory you used:
  962 strings out of 493215
  12291 string characters out of 6144071
- 81317 words of memory out of 5000000
+ 82317 words of memory out of 5000000
  4981 multiletter control sequences out of 15000+600000
  14050 words of font info for 68 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  25i,14n,20p,284b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template_robomech_utf8.dvi (4 pages, 22248 bytes).
+Output written on template_robomech_utf8.dvi (4 pages, 24224 bytes).

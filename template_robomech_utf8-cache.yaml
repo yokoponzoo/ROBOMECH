@@ -130,9 +130,9 @@ files:
       $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
     type: ParsedYAML
   template_robomech_utf8.tex:
-    timeStamp: 2019-03-02T05:59:52.603Z
+    timeStamp: 2019-03-02T07:43:08.896Z
     jobNames: []
-    hash: hcVLadtlk4Gh5jIhI4oZEyVG/uQbxCXHQVKBamZMUn4=
+    hash: /NyR+l03disk8EJaFCN3S3Ab8o2vpB9wRmifF14Wfks=
     type: LaTeX
     subType: jsarticle
   /Users/koki/Library/Application Support/dicy/config.yaml:
@@ -143,16 +143,16 @@ files:
     jobNames: []
     type: Nil
   template_robomech_utf8.log:
-    timeStamp: 2019-03-02T05:59:34.046Z
+    timeStamp: 2019-03-02T07:42:30.567Z
     jobNames: []
-    hash: oh7HfRGQRVWDKNWP1mM0YUZuWzkwHNNsT30RAcLm1vE=
+    hash: Fa8ubaB+NLyEjUZ5VFSTpW+RATMc1B40HqfzU2CYSJE=
     type: LaTeXLog
     subType: e-upTeX
   template_robomech_utf8.fls-ParsedFileListing:
     jobNames: []
     type: ParsedFileListing
   template_robomech_utf8.log-ParsedLaTeXLog:
-    timeStamp: 2019-03-02T05:59:40.739Z
+    timeStamp: 2019-03-02T07:19:50.467Z
     jobNames: []
     value:
       messages:
@@ -1072,59 +1072,17 @@ files:
         - severity: info
           name: e-upTeX
           category: LaTeX Font
-          text: External font `cmex10' loaded for size <9>.
-          source:
-            file: template_robomech_utf8.tex
-            range:
-              start: 74
-              end: 74
-          log:
-            file: template_robomech_utf8.log
-            range:
-              start: 205
-              end: 206
-        - severity: info
-          name: e-upTeX
-          category: LaTeX Font
-          text: External font `cmex10' loaded for size <6>.
-          source:
-            file: template_robomech_utf8.tex
-            range:
-              start: 74
-              end: 74
-          log:
-            file: template_robomech_utf8.log
-            range:
-              start: 207
-              end: 208
-        - severity: info
-          name: e-upTeX
-          category: LaTeX Font
-          text: Font shape `JY2/mc/m/n' will be scaled to size 5.5481pt.
-          source:
-            file: template_robomech_utf8.tex
-            range:
-              start: 74
-              end: 74
-          log:
-            file: template_robomech_utf8.log
-            range:
-              start: 209
-              end: 210
-        - severity: info
-          name: e-upTeX
-          category: LaTeX Font
           text: Try loading font information for OMS+cmr
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 210
-              end: 210
+              start: 60
+              end: 60
           log:
             file: template_robomech_utf8.log
             range:
-              start: 226
-              end: 226
+              start: 201
+              end: 201
         - severity: info
           name: e-upTeX
           category: LaTeX Font
@@ -1134,26 +1092,68 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 210
-              end: 210
+              start: 60
+              end: 60
           log:
             file: template_robomech_utf8.log
             range:
-              start: 231
-              end: 232
+              start: 205
+              end: 206
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: External font `cmex10' loaded for size <9>.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 113
+              end: 113
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 220
+              end: 221
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: External font `cmex10' loaded for size <6>.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 113
+              end: 113
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 222
+              end: 223
+        - severity: info
+          name: e-upTeX
+          category: LaTeX Font
+          text: Font shape `JY2/mc/m/n' will be scaled to size 5.5481pt.
+          source:
+            file: template_robomech_utf8.tex
+            range:
+              start: 113
+              end: 113
+          log:
+            file: template_robomech_utf8.log
+            range:
+              start: 224
+              end: 225
       inputs: []
       outputs:
         - template_robomech_utf8.dvi
       calls: []
     type: ParsedLaTeXLog
   template_robomech_utf8.dvi:
-    timeStamp: 2019-03-02T05:59:53.252Z
+    timeStamp: 2019-03-02T07:43:09.769Z
     jobNames: []
     type: DeviceIndependentFile
   template_robomech_utf8.pdf:
-    timeStamp: 2019-03-02T06:00:00.280Z
+    timeStamp: 2019-03-02T07:43:17.656Z
     jobNames: []
-    hash: 3WWxgoA17ykcAvDKgjoqnYnr0t1ZSdyPAZnOBlmI4a8=
+    hash: LfdX2qpKgL7uPA/ubvrYmm5uKLr5OT/5Heas/2/7gbI=
     type: PortableDocumentFormat
 rules:
   - name: ApplyOptions

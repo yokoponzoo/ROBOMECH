@@ -38,24 +38,32 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 そこで空間に分散させたセンサノードから情報を取得する方法が提案されている。
 これを空間の知能化という。
 カメラを空間上に分散させロボットの人追従を行なった研究事例\cite{1}も報告されており、これによりロボットが外部のセンサ情報を利用する有用性が確認できる。
-しかしこの手法ではセンサノードを空間内に設置する際に、設置位置などの詳細な設定を行う必要があり、ロボットの稼働環境に依存させなくてはいけないという問題点も存在する。
+しかしこの手法ではセンサノードを空間内に設置する際に、設置位置などの詳細な設定を行う必要があるという問題点も存在する。
 
 そこで本研究では環境にセンサノードを固定させるのではなく、同一空間上に存在する複数のロボットがセンサデータを取得・共有・更新を行う枠組みの提案および開発を目的としている。
-著者らはセンサデータ共有の枠組みとしてブロックチェーンを提案し、開発に着手してきた\cite{2}。
-またロボットが共有するセンサデータとして通行者情報地図（図\ref{fig: HFM}HFM:Human Frequency Map）を用いたシステムを提案し、開発を行なっている\cite{3}\cite{4}。
-図\ref{fig: proposedsystem}は提案システムの全体像を示している。
-複数台のロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
+著者らはセンサデータ共有の枠組みとしてブロックチェーンを用いたシステム提案し、開発に着手してきた\cite{2}。
+またロボットが共有するセンサデータとして通行者情報地図（HFM:Human Frequency Map）を用いたシステムを提案し、開発を行なっている\cite{3}\cite{4}。
+複数台の移動ロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
 しかしこのシステムにおいてHFMをロボットが取得する際、人が観測地点まで手動でロボットを移動させている。
 
 本稿ではロボットが自動かつ継続的にHFMを更新しデータを蓄積する手法を提案する。
 また本稿ではシミュレーターを作成し、提案手法の実験を行なった。
-\begin{figure}[tbh]
- \centering
-  \includegraphics[height=45mm]{fig/HFM.eps}
-  \vspace*{-4mm}
-  \caption{Human Frequency Map}
-  \label{fig: HFM}
-\end{figure}
+
+
+\section{提案システム}
+本研究ではHFMを共有するセンサデータとしてシステムを提案し、その開発に着手してきた。
+複数台の移動ロボットが地図空間の様々な場所に移動しHFMを観測する。
+その観測したHFMをブロックチェーンを介し共有を行うことで、空間上にいる他のロボットもそのデータを活用するという一連の流れの開発を目的としている。
+図\ref{fig: proposedsystem}は提案システムの全体像を示している。
+この提案システムを実現するために次の4つの段階があると考える。
+\begin{itemize}
+  \item Acquire(HFMの取得)
+  \item Share(HFMの共有)
+  \item Utilize(HFMの活用)
+  \item Update(HFMの更新)
+\end{itemize}
+著者らは取得・共有・活用までは\cite{4}で開発しているので、本稿ではHFMの更新を主な目的としている。
+
 
 \begin{figure}[tbh]
  \centering
@@ -65,14 +73,47 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
   \label{fig: proposedsystem}
 \end{figure}
 
+
+
+\subsection{Human Frequency Map}
+Human Frequency Mapとは占有格子地図をグリッドに分けた時にグリッドごと保持している人の経路情報のことである。
+人の経路情報とは通行頻度や人の進行方向などのことである。
+本研究では通行頻度を利用しており、図\ref{fig: HFM}はそのイメージを示している。
+\begin{figure}[tbh]
+ \centering
+  \includegraphics[height=50mm]{fig/HFM.eps}
+  \vspace*{-4mm}
+  \caption{Human Frequency Map}
+  \label{fig: HFM}
+\end{figure}
+
+
 \section{HFM更新手法}
+\subsection{グリットごとの観測回数の共有}
+HFMを更新していくためにはロボットが共有された情報を基に次の観測地点を決定していく必要がある。
+そこでグリッドごとに観測回数を持たせ、それを共有すること手法をとる。
+これを基にHFMを更新するロボットが次どこの地点を観測すればいいのかを判断する。
+またこの手法ではHFMがブロックチェーン上で共有されるたびに観測されたグリッドの観測回数を更新する必要がある。
+今回はHFMが共有されるのを監視するPCをブロックチェーンのノードして接続しこれを実現させる(図\ref{fig: sharefile})。
+
+\begin{figure}[tbh]
+ \centering
+  \includegraphics[height=40mm]{fig/sharefile.eps}
+  \vspace*{-4mm}
+  \caption{Share a Number of Observation}
+  \label{fig: sharefile}
+\end{figure}
+
+
 \subsection{観測地点の決定方法}
 \label{decide}
-次の観測地点を決定する手段として、グリットごとの観測数とロボットの現時点からの移動距離を利用する。
+次の観測地点を決定する手段として、グリットごとの観測数とロボットの現時点からの距離を利用する。
 本研究ではロボットを静止させ、前方6mx6mの範囲でHFMを観測を行わせているため、一度の観測における観測範囲は固定である。
 その観測範囲に対応した矩形範囲内で地図の左上から右下まで探索を行い、
-矩形範囲内ごとの平均観測数$x_{o}$およびロボットの現時点からの移動距離$x_{d}$を求める。
+矩形範囲内ごとの平均観測数$x_{o}$およびロボットの現時点からの距離$x_{d}$を求める。
+\reffig{fig: value-method}の青い矩形が矩形範囲内に相当し、矩形範囲内の左上のグリッドが距離である。
 これらの数値にそれぞれ重み$w_{o},w_{d}$をかけ足し合わせたものを矩形範囲における$value$とする。
+
 この$value$が最小の地点を次の観測地点と決定する。
 \refeqn{eqn: value}は$value$の計算式である。
 
@@ -82,13 +123,21 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 \end{equation}
 
 $x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範囲での$x_o,x_d$を計算したのち、それぞれ標準化したものを利用している。
-
 また$w_o,w_d$の範囲は0$\sim$1であり、\refeqn{eqn: weight}の条件を満たしている。
 
 \begin{equation}
   w_o = 1 - w_d
 	\label{eqn: weight}
 \end{equation}
+
+
+\begin{figure}[tbh]
+ \centering
+  \includegraphics[height=45mm]{fig/decisionpoint.eps}
+  \vspace*{-4mm}
+  \caption{Decision of Obsevation Point}
+  \label{fig: value-method}
+\end{figure}
 
 \subsubsection{平均観測数の計算}
 矩形範囲における平均観測数を変数として利用するためには矩形範囲内に存在する観測不可能なグリットの数を考慮する必要がある。
@@ -101,11 +150,10 @@ $x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範�
 	\label{eqn: observation}
 \end{equation}
 
-\subsubsection{移動距離の計算}
-移動距離の計算においてはグリット単位での計算を行なっている。
-\reffig{fig: value-method}ではグリットの一辺が0.5mの際の例を示したものである。
-また本研究でも一辺0.5mのグリットを利用している。
-\refeqn{eqn: distance}は移動距離の計算式である。
+\subsubsection{距離の計算}
+距離の計算においてはグリット単位での計算を行なっている。
+本研究でも一辺0.5mのグリットを利用している。
+\refeqn{eqn: distance}は距離の計算式である。
 ここでは$ロボットの現時点での座標を(x_0, y_0)、次の地点を(x_1,y_1)$とし表している。
 
 
@@ -115,46 +163,23 @@ $x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範�
 \end{equation}
 
 
-\begin{figure}[tbh]
- \centering
-  \includegraphics[height=55mm]{fig/decisionpoint.eps}
-  \vspace*{-4mm}
-  \caption{Decision of Obsevation Point}
-  \label{fig: value-method}
-\end{figure}
-
-\subsection{グリットごとの観測回数の共有}
-\ref{decide}項の観測地点の決定方法を複数台のロボットで行うためにはグリットごとの観測回数をロボット間で共有する必要がある。
-そこでHFMがブロックチェーンで共有されるたびにグリットごとの観測数を逐次更新する手法をとる。
-今回はHFMが共有されるのを監視するPCをブロックチェーンのノードして接続しこれを実現させる。(図\ref{fig: sharefile})
-
-\begin{figure}[tbh]
- \centering
-  \includegraphics[height=40mm]{fig/sharefile.eps}
-  \vspace*{-4mm}
-  \caption{Share a Number of Observation}
-  \label{fig: sharefile}
-\end{figure}
-
-
-
 
 \section{シミュレーターの開発}
 \label{simulation}
-本稿では実際にロボットに走行させるではなく、シミュレーターを開発をし観測回数の遷移および最適な重みの探索を行う。今回のシミュレーターはpythonにて開発を行なった。
+本稿では実際にロボットに走行させるではなく、シミュレーターを開発し観測回数の遷移および最適な重みの探索を行う。今回のシミュレーターはpythonにて開発を行なった。
 \subsection{シミュレーション手順}
 \label{process-simulation}
 \begin{enumerate}
   \item グリットごとの観測数の初期化（全て0にする）
-  \item ロボットの初期位置を決定
+  \item ロボットの初期位置を決定(地図上の地点からランダムに決定)
   \item \ref{decide}項の手法により観測地点の決定
   \item 決定した観測地点をもとにグリットごとの観測数を+1
 \end{enumerate}
-手順の3,4を任意の回数繰り返すことにより、地図全体の観測回数の繊維を確認することができる。
+手順の3,4を任意の回数繰り返すことにより、地図全体の観測回数の遷移を確認することができる。
 この任意の回数のことをここでは試行回数$n$と呼ぶこととする。
 また$w_o,w_d$はプログラム上で変更することができる。
 図\ref{fig: example of simulation}は初期段階から試行回数を1度行なった時の図である。
-上の画像が観測数が初期の図であり、下赤く囲まれた部分が初期地点として観測を行った地点であり、観測数が増えているのがわかる。
+上の画像が観測数が初期の図であり、赤く囲まれた部分が初期地点として観測を行った地点であり、観測数が増えているのがわかる。
 
 \begin{figure}[tbh]
  \centering
@@ -168,7 +193,7 @@ $x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範�
 \label{run-simulation}
 \ref{process-simulation}項で開発したものを明治大学中野キャンパス11Fの地図にてシミュレーションを行う。
 $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
-これは移動距離を無視することにより、観測回数のみを考慮した理論的な数値を得ることができると考えたためである。
+これは距離を無視することにより、観測回数のみを考慮した数値を得ることができると考えたためである。
 図\ref{fig: result of experiments}のグラフはその結果である。
 横軸が試行回数$n$、縦軸が地図全体の平均観測数である。
 地図全体の平均観測数は以下の\refeqn{eqn: average-in-map}で定義している。
@@ -187,7 +212,7 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
   \label{fig: result of experiments}
 \end{figure}
 
-この結果より移動距離を考慮しない場合、試行回数$n=1000$の時地図全体の平均観測数が約35回になることがわかる。
+この結果より距離を考慮しない場合、試行回数$n=1000$の時地図全体の平均観測数が約35回になることがわかる。
 つまりこの実験環境においておおよそ試行回数$n=30$で全てのグリットの観測を行うことができる。
 図\ref{fig: n30}は試行回数$n=30$の時のグリットごとの観測数を地図に描画したものであり、ほとんどのグリットにおいて観測数が1か2なのがわかる。
 
@@ -208,7 +233,7 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
 本稿では以下の2点に着目し重みの評価を行った。
 \begin{itemize}
 	\item 観測したグリッド数の比較
-	\item 総移動距離の比較
+	\item 総距離の比較
 \end{itemize}
 \ref{run-simulation}項により試行回数が約30で全てのグリッドを観測するのわかった。
 そこでシミュレーション上にて距離の重みを0$\sim$1の範囲で0.1ずつ変化させ、
@@ -234,29 +259,29 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
 \end{figure}
 
 
-\subsection{総移動距離の比較}
+\subsection{総距離の比較}
 \label{evaluate-distance}
-地図全体の観測を効率的に行うためには、移動距離を最小限に行なっていく必要がある。
-図\ref{fig: evaluate-distance}は$w_d$ごとの総移動距離のグラフである。
+地図全体の観測を効率的に行うためには、距離を最小限に行なっていく必要がある。
+図\ref{fig: evaluate-distance}は$w_d$ごとの総距離のグラフである。
 
 
 \begin{figure}[tbh]
  \centering
   \includegraphics[height=50mm]{fig/evaluate-distance.eps}
   \vspace*{-4mm}
-  \caption{総移動距離による評価}
+  \caption{総距離による評価}
   \label{fig: evaluate-distance}
 \end{figure}
 
 \subsection{重みの評価に対する考察}
 図\ref{fig: evaluate-observation}から$w_d$が0.5までは観測回数が1200弱で横並びであり、それ以降減少していることがわかる。
-また図\ref{fig: evaluate-distance}から$w_d$が増えるにあたり、総移動距離が少なくなっていることがわかる。
+また図\ref{fig: evaluate-distance}から$w_d$が増えるにあたり、総距離が少なくなっていることがわかる。
 この結果から$w_d$は0.5前後が最適だと考えられる。
 
 \section{複数台のロボットを想定したシミュレーション}
 \subsection{シミュレーション内容および結果}
 
-前章までに行なったシミュレーションはロボットが1台であるとして実証を行なっている。
+前章までに行なったシミュレーションはロボットが1台として実験を行なっている。
 そこでロボットの数を増やした時の場合を想定した時のシミュレーションを行う。
 観測したグリット数が試行を繰り返すごとにどのように遷移していくかをロボットの数ごとに比較を行う。
 今回ロボットの数は1$\sim$3台,試行回数$n=30,w_o=0.5,w_d=0.5$とし、シミュレーションを行なった。
@@ -267,7 +292,7 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
 
 \begin{figure}[tbh]
  \centering
-  \includegraphics[height=50mm]{fig/each-multi-robot.eps}
+  \includegraphics[height=55mm]{fig/each-multi-robot.eps}
   \vspace*{-4mm}
   \caption{それぞれの台数での結果}
   \label{fig: each-multirobot}
@@ -307,10 +332,6 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
 \end{figure}
 
 今後は上記を考慮したシミュレーターを作成し提案手法の評価を行い、実環境での実験を目指す。
-
-
-
-
 
 
 \footnotesize
