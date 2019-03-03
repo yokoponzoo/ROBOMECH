@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  3 MAR 2019 18:03
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  3 MAR 2019 22:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -217,15 +217,15 @@ File: fig/proposedsystem.eps Graphic file (type eps)
 File: fig/sharefile.eps Graphic file (type eps)
 <fig/sharefile.eps>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 131.
+(Font)              <9> on input line 129.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 131.
+(Font)              <6> on input line 129.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 131.
+(Font)              scaled to size 5.5481pt on input line 129.
 File: fig/decisionpoint.eps Graphic file (type eps)
-<fig/decisionpoint.eps>
+<fig/decisionpoint.eps> [2]
 File: fig/example.eps Graphic file (type eps)
-<fig/example.eps> [2]
+<fig/example.eps>
 File: fig/n1000.eps Graphic file (type eps)
 <fig/n1000.eps>
 File: fig/n30.eps Graphic file (type eps)
@@ -248,6 +248,6 @@ Here is how much of TeX's memory you used:
  4984 multiletter control sequences out of 15000+600000
  14050 words of font info for 68 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 25i,14n,20p,353b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 25i,14n,20p,358b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template_robomech_utf8.dvi (4 pages, 27872 bytes).
+Output written on template_robomech_utf8.dvi (4 pages, 28132 bytes).
