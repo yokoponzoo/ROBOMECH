@@ -58,13 +58,13 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /Users/koki/src/lab/ROBOMECH2019/fig/HFM.eps
+INPUT /Users/koki/src/lab/ROBOMECH2019/fig/HFM.eps
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /Users/koki/src/lab/ROBOMECH2019/fig/proposedsystem.eps
 INPUT /Users/koki/src/lab/ROBOMECH2019/fig/proposedsystem.eps
-INPUT /Users/koki/src/lab/ROBOMECH2019/fig/HFM.eps
-INPUT /Users/koki/src/lab/ROBOMECH2019/fig/HFM.eps
 OUTPUT template_robomech_utf8.dvi
 INPUT /Users/koki/src/lab/ROBOMECH2019/fig/sharefile.eps
 INPUT /Users/koki/src/lab/ROBOMECH2019/fig/sharefile.eps

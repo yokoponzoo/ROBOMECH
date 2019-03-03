@@ -71,7 +71,7 @@ options:
   $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2019-03-02T05:59:21.880Z
+    timeStamp: 2019-03-03T05:48:15.130Z
     jobNames: []
     value:
       severity: info
@@ -130,29 +130,29 @@ files:
       $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
     type: ParsedYAML
   template_robomech_utf8.tex:
-    timeStamp: 2019-03-02T07:49:13.045Z
+    timeStamp: 2019-03-03T08:27:03.699Z
     jobNames: []
-    hash: JFJXHDG46t1UEhg2tib1Kb7+Mv92mAiqeBCR2pdPJRg=
+    hash: KgqjhI/tqmWnYIuuaq6hpG4kjZiQZ0UtebKdA5qHRzg=
     type: LaTeX
     subType: jsarticle
   /Users/koki/Library/Application Support/dicy/config.yaml:
-    timeStamp: 2019-03-02T05:59:21.914Z
+    timeStamp: 2019-03-03T05:48:15.153Z
     jobNames: []
     type: YAML
   x.y-Nil:
     jobNames: []
     type: Nil
   template_robomech_utf8.log:
-    timeStamp: 2019-03-02T07:48:43.228Z
+    timeStamp: 2019-03-03T08:25:15.045Z
     jobNames: []
-    hash: 5t3B8YW5xkbDNJvVHqAge5tc/RRZ0h0OBv87difG1s0=
+    hash: GHUo7993niogWZXwD34GvOuH9u5Rp+wcio7c6RTHtHI=
     type: LaTeXLog
     subType: e-upTeX
   template_robomech_utf8.fls-ParsedFileListing:
     jobNames: []
     type: ParsedFileListing
   template_robomech_utf8.log-ParsedLaTeXLog:
-    timeStamp: 2019-03-02T07:48:51.529Z
+    timeStamp: 2019-03-03T08:27:11.614Z
     jobNames: []
     value:
       messages:
@@ -1076,13 +1076,13 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 60
-              end: 60
+              start: 74
+              end: 74
           log:
             file: template_robomech_utf8.log
             range:
-              start: 201
-              end: 201
+              start: 203
+              end: 203
         - severity: info
           name: e-upTeX
           category: LaTeX Font
@@ -1092,13 +1092,13 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 60
-              end: 60
+              start: 74
+              end: 74
           log:
             file: template_robomech_utf8.log
             range:
-              start: 205
-              end: 206
+              start: 207
+              end: 208
         - severity: info
           name: e-upTeX
           category: LaTeX Font
@@ -1106,8 +1106,8 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 113
-              end: 113
+              start: 129
+              end: 129
           log:
             file: template_robomech_utf8.log
             range:
@@ -1120,8 +1120,8 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 113
-              end: 113
+              start: 129
+              end: 129
           log:
             file: template_robomech_utf8.log
             range:
@@ -1134,8 +1134,8 @@ files:
           source:
             file: template_robomech_utf8.tex
             range:
-              start: 113
-              end: 113
+              start: 129
+              end: 129
           log:
             file: template_robomech_utf8.log
             range:
@@ -1147,13 +1147,13 @@ files:
       calls: []
     type: ParsedLaTeXLog
   template_robomech_utf8.dvi:
-    timeStamp: 2019-03-02T07:49:13.748Z
+    timeStamp: 2019-03-03T08:27:04.299Z
     jobNames: []
     type: DeviceIndependentFile
   template_robomech_utf8.pdf:
-    timeStamp: 2019-03-02T07:49:22.553Z
+    timeStamp: 2019-03-03T08:27:11.401Z
     jobNames: []
-    hash: /AtvdI00uqCmByoDbXbvaBBpY8iQCLuQJ56HbpUPv2U=
+    hash: xoUCcXl/zT4bfUoWUUKx6PfL+NyGJEjGbFbrhacXWHo=
     type: PortableDocumentFormat
 rules:
   - name: ApplyOptions

@@ -51,6 +51,20 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 
 
 \section{提案システム}
+\subsection{Human Frequency Map}
+Human Frequency Mapとは占有格子地図をグリッドに分けた時にグリッドごと保持している人の経路情報のことである。
+人の経路情報とは通行頻度や人の進行方向などのことである。
+本研究では通行頻度を利用しており、図\ref{fig: HFM}はそのイメージを示している。
+この図では通行頻度を色で示しており、実際はグリッドごとに人が通行した回数が数値として格納されている。
+\begin{figure}[tbh]
+ \centering
+  \includegraphics[height=50mm]{fig/HFM.eps}
+  \vspace*{-4mm}
+  \caption{Human Frequency Map}
+  \label{fig: HFM}
+\end{figure}
+
+\subsection{システム概要}
 本研究ではHFMを共有するセンサデータとしてシステムを提案し、その開発に着手してきた。
 複数台の移動ロボットが地図空間の様々な場所に移動しHFMを観測する。
 その観測したHFMをブロックチェーンを介し共有を行うことで、空間上にいる他のロボットもそのデータを活用するという一連の流れの開発を目的としている。
@@ -73,25 +87,27 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
   \label{fig: proposedsystem}
 \end{figure}
 
+\subsubsection{HFMの取得}
+HFMの取得では北陽電機社製のレーザー測域センサUTM-30LXを利用して行なっている。
+測域センサをロボットに搭載、取得されたセンサ情報をOpenCVで描画し、テンプレートマッチングを用いてHFMの取得をしている。
+また取得したHFMはcsvファイルにて保存している。
+
+\subsubsection{HFMの共有}
+ブロックチェーンを用いて複数台の移動ロボットでのネットワークを構築し、ブロックチェーンのシステム上でHFMを共有している。
+本研究ではブロックチェーンとしてEthereumを採用している。
+IPFSという分散型ファイルシステムとEthereumを利用することでcsvファイルの共有を実現している。
 
 
-\subsection{Human Frequency Map}
-Human Frequency Mapとは占有格子地図をグリッドに分けた時にグリッドごと保持している人の経路情報のことである。
-人の経路情報とは通行頻度や人の進行方向などのことである。
-本研究では通行頻度を利用しており、図\ref{fig: HFM}はそのイメージを示している。
-\begin{figure}[tbh]
- \centering
-  \includegraphics[height=50mm]{fig/HFM.eps}
-  \vspace*{-4mm}
-  \caption{Human Frequency Map}
-  \label{fig: HFM}
-\end{figure}
+\subsubsection{HFMの活用}
+HFMをもとにコストッマプを作成し、A*アルゴリズムを用いて大域経路計画を行う。
+これは現在地から目的地まで与えられたコストが最小になるような経路計画を立てるものである。
+
 
 
 \section{HFM更新手法}
 \subsection{グリットごとの観測回数の共有}
 HFMを更新していくためにはロボットが共有された情報を基に次の観測地点を決定していく必要がある。
-そこでグリッドごとに観測回数を持たせ、それを共有すること手法をとる。
+そこでグリッドごとに観測回数を持たせ、それを共有する手法をとる。
 これを基にHFMを更新するロボットが次どこの地点を観測すればいいのかを判断する。
 またこの手法ではHFMがブロックチェーン上で共有されるたびに観測されたグリッドの観測回数を更新する必要がある。
 今回はHFMが共有されるのを監視するPCをブロックチェーンのノードして接続しこれを実現させる(図\ref{fig: sharefile})。
@@ -113,7 +129,6 @@ HFMを更新していくためにはロボットが共有された情報を基�
 矩形範囲内ごとの平均観測数$x_{o}$およびロボットの現時点からの距離$x_{d}$を求める。
 \reffig{fig: value-method}の青い矩形が矩形範囲内に相当し、矩形範囲内の左上のグリッドが距離である。
 これらの数値にそれぞれ重み$w_{o},w_{d}$をかけ足し合わせたものを矩形範囲における$value$とする。
-
 この$value$が最小の地点を次の観測地点と決定する。
 \refeqn{eqn: value}は$value$の計算式である。
 
@@ -122,7 +137,7 @@ HFMを更新していくためにはロボットが共有された情報を基�
 	\label{eqn: value}
 \end{equation}
 
-$x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範囲での$x_o,x_d$を計算したのち、それぞれ標準化したものを利用している。
+$x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範囲での平均観測数と距離を計算したのち、それぞれ標準化したものを利用している。
 また$w_o,w_d$の範囲は0$\sim$1であり、\refeqn{eqn: weight}の条件を満たしている。
 
 \begin{equation}
@@ -166,7 +181,8 @@ $x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範�
 
 \section{シミュレーターの開発}
 \label{simulation}
-本稿では実際にロボットに走行させるではなく、シミュレーターを開発し観測回数の遷移および最適な重みの探索を行う。今回のシミュレーターはpythonにて開発を行なった。
+本稿では実際にロボットに走行させるのではなく、シミュレーターを開発し観測回数の遷移および最適な重みの探索を行う。今回のシミュレーターでは事前にSLAMで作成した占有格子地図を0.5m x 0.5mのグリッドに分割したものを利用している。
+
 \subsection{シミュレーション手順}
 \label{process-simulation}
 \begin{enumerate}
@@ -193,7 +209,8 @@ $x_o,x_d$は絶対値の違いによる作用を考慮し、全ての矩形範�
 \label{run-simulation}
 \ref{process-simulation}項で開発したものを明治大学中野キャンパス11Fの地図にてシミュレーションを行う。
 $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
-これは距離を無視することにより、観測回数のみを考慮した数値を得ることができると考えたためである。
+$w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考慮して次の観測地点を決定する。
+これにより観測回数が少ない条件の地点を見にいくことができ、最短の試行回数で全てのグリッドを観測しにいくことができ、\ref{evaluate-weight}章の重みの評価で用いる試行回数の基準を決定することが可能になる。
 図\ref{fig: result of experiments}のグラフはその結果である。
 横軸が試行回数$n$、縦軸が地図全体の平均観測数である。
 地図全体の平均観測数は以下の\refeqn{eqn: average-in-map}で定義している。
@@ -229,13 +246,14 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
 
 
 \section{重みの評価}
+\label{evaluate-weight}
 \ref{simulation}章で開発したシミュレーターを用いて最適な$w_o,w_d$の探索を行う。
 本稿では以下の2点に着目し重みの評価を行った。
 \begin{itemize}
 	\item 観測したグリッド数の比較
 	\item 総距離の比較
 \end{itemize}
-\ref{run-simulation}項により試行回数が約30で全てのグリッドを観測するのわかった。
+\ref{run-simulation}項により試行回数が約30で全てのグリッドを観測するのがわかった。
 そこでシミュレーション上にて距離の重みを0$\sim$1の範囲で0.1ずつ変化させ、
 それぞれの重みで30回の試行回数を5回行うことにする。
 5回シミュレーションを行ったあと結果の平均を取り、それぞれの重みでの比較を行う。
@@ -252,14 +270,14 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
  \centering
   \includegraphics[height=50mm]{fig/evaluate-grid.eps}
   \vspace*{-4mm}
-  \caption{観測したグリット数による評価}
+  \caption{Evaluation with a Number of Observed Grid}
   \label{fig: evaluate-observation}
 \end{figure}
 
 
 \subsection{総距離の比較}
 \label{evaluate-distance}
-地図全体の観測を効率的に行うためには、距離を最小限に行なっていく必要がある。
+地図全体の観測を効率的に行うためには、ロボットの移動時間も考慮し距離を最小限に行なっていく必要がある。
 図\ref{fig: evaluate-distance}は$w_d$ごとの総距離のグラフである。
 
 
@@ -267,14 +285,14 @@ $n=1000,w_o=1.0,w_d=0.0$とし、シミュレーションを行なった。
  \centering
   \includegraphics[height=50mm]{fig/evaluate-distance.eps}
   \vspace*{-4mm}
-  \caption{総距離による評価}
+  \caption{Evaluation with Total Distance}
   \label{fig: evaluate-distance}
 \end{figure}
 
 \subsection{重みの評価に対する考察}
 図\ref{fig: evaluate-observation}から$w_d$が0.5までは観測回数が1200弱で横並びであり、それ以降減少していることがわかる。
 また図\ref{fig: evaluate-distance}から$w_d$が増えるにあたり、総距離が少なくなっていることがわかる。
-この結果から$w_d$は0.5前後が最適だと考えられる。
+この結果から$w_d$は0.4$\sim$0.6がバランスの取れているものと考えられる。
 
 \section{複数台のロボットを想定したシミュレーション}
 \subsection{シミュレーション内容および結果}
