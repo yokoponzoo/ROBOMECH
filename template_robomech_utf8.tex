@@ -37,12 +37,14 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 しかしロボット自身に搭載されているセンサデータだけでは取得できる情報に限界が存在する。
 そこで空間に分散させたセンサノードから情報を取得する方法が提案されている。
 これを空間の知能化という。
-カメラを空間上に分散させロボットの人追従を行なった研究事例\cite{1}も報告されており、これによりロボットが外部のセンサ情報を利用する有用性が確認できる。
+カメラを空間上に分散させロボットの人追従を行なった研究事例\cite{kazuyuki}も報告されている。
+また環境中にレーザーセンサを設置し、通行者情報地図（HFM:Human Frequency Map）を取得し、それを利用した経路計画の研究事例を報告されている\cite{maeyama}\cite{nitta}。
+これらの研究事例よりロボットが外部のセンサ情報を利用する有用性を確認できる。
 しかしこの手法ではセンサノードを空間内に設置する際に、設置位置などの詳細な設定を行う必要があるという問題点も存在する。
 
 そこで本研究では環境にセンサノードを固定させるのではなく、同一空間上に存在する複数のロボットがセンサデータを取得・共有・更新を行う枠組みの提案および開発を目的としている。
-著者らはセンサデータ共有の枠組みとしてブロックチェーンを用いたシステム提案し、開発に着手してきた\cite{2}。
-またロボットが共有するセンサデータとして通行者情報地図（HFM:Human Frequency Map）を用いたシステムを提案し、開発を行なっている\cite{3}\cite{4}。
+著者らはセンサデータ共有の枠組みとしてブロックチェーンを用いたシステム提案し、開発に着手してきた\cite{robo2018}。
+またロボットが共有するセンサデータとしてHFMを用いたシステムを提案し、開発を行なっている\cite{si2018}\cite{kato}。
 複数台の移動ロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
 しかしこのシステムではHFMを共有し、他のロボットが活用する流れの動作確認を目的としており、HFMを取得しにいく際には人間が手動でロボットを移動させていた。
 
@@ -76,7 +78,7 @@ Human Frequency Mapとは占有格子地図をグリッドに分けた時にグ�
   \item Utilize(HFMの活用)
   \item Update(HFMの更新)
 \end{itemize}
-著者らは取得・共有・活用までは\cite{4}で開発しているので、本稿ではHFMの更新を主な目的としている。
+著者らは取得・共有・活用までは\cite{si2018}で開発しているので、本稿ではHFMの更新を主な目的としている。
 
 
 \begin{figure}[tbh]
@@ -318,7 +320,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=50mm]{fig/multi-robot.eps}
   \vspace*{-4mm}
-  \caption{複数台ロボット}
+  \caption{Comparision of a Number of Robots}
   \label{fig: multirobot}
 \end{figure}
 
@@ -353,16 +355,22 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 \footnotesize
 \begin{thebibliography}{99}
 
-\bibitem{1}
-Kazuyuki Morioka, Joo-Ho Lee, Hideki Hashimoto, "Human- following mobile robot in a distributed intelligent sensor network", IEEE Transactions on Industrial Electronics, Vol.51, No.1, pp.229-237, 2004.
+\bibitem{kazuyuki}
+Kazuyuki Morioka, Joo-Ho Lee, Hideki Hashimoto, "Human following mobile robot in a distributed intelligent sensor network", IEEE Transactions on Industrial Electronics, Vol.51, No.1, pp.229-237, 2004.
 
-\bibitem{2}
+\bibitem{maeyama}
+前山祥一, 西本雅規, 渡辺桂吾, "知能化空間における人の位置観 測に基づく通路地図作成と移動ロボットの経路計画への適用", 計測自動制御学会論文集, vol.47, pp .631-639, 2011.
+
+\bibitem{nitta}
+新田次郎, 佐々木洋子, 溝口博, 加賀美聡, "人環境で移動するロ ボットの通行者情報地図による経路計画手法", ロボティクス・ メカトロニクス講演会講演概要集, 1P2-S01(1)-1P2-S01(4), 2015.
+
+\bibitem{robo2018}
 横山光希, 森岡一幸, "ブロックチェーンを用いた知能化空間のためのセンサデータ共有システム", ROBOMECH2018. 2A2-D08, 2018.
 
-\bibitem{3}
+\bibitem{si2018}
 横山光希, 森岡一幸, "ブロックチェーンを用いた移動ロボットのための環境地図共有システム", SI2018. 2D4-06, 2018.
 
-\bibitem{4}
+\bibitem{kato}
 加藤勇気, 森岡一幸, “移動ロボットによる人間観測に基づく通行者情報の作成と柔軟な経路計画”, ROBOMECH2017, 2A2-D08, 2017.
 
 
