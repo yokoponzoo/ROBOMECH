@@ -43,6 +43,7 @@ In this paper, we describe a method of updating multiple robot Human Frequency M
 しかしこの手法ではセンサノードを空間内に設置する際に、設置位置などの詳細な設定を行う必要があるという問題点も存在する。
 
 そこで本研究では環境にセンサノードを固定させるのではなく、同一空間上に存在する複数のロボットがセンサデータを取得・共有・更新を行う枠組みの提案および開発を目的としている。
+複数台の移動ロボットによる地図更新手法の提案し開発に取り組んでいる事例が報告されている\cite{toyota}。
 著者らはセンサデータ共有の枠組みとしてブロックチェーンを用いたシステム提案し、開発に着手してきた\cite{robo2018}。
 またロボットが共有するセンサデータとしてHFMを用いたシステムを提案し、開発を行なっている\cite{si2018}\cite{kato}。
 複数台の移動ロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
@@ -107,7 +108,7 @@ HFMをもとにコストッマプを作成し、A*アルゴリズムを用いて
 
 
 \section{HFM更新手法}
-\subsection{グリットごとの観測回数の共有}
+\subsection{グリッドごとの観測回数の共有}
 HFMを更新していくためにはロボットが共有された情報を基に次の観測地点を決定していく必要がある。
 そこでグリッドごとに観測回数を持たせ、それを共有する手法をとる。
 これを基にHFMを更新するロボットが次どこの地点を観測すればいいのかを判断する。
@@ -118,14 +119,19 @@ HFMを更新していくためにはロボットが共有された情報を基�
  \centering
   \includegraphics[height=40mm]{fig/sharefile.eps}
   \vspace*{-4mm}
-  \caption{Share a Number of Observation}
+  \caption{Share the Number of Observation}
   \label{fig: sharefile}
 \end{figure}
 
 
 \subsection{観測地点の決定方法}
 \label{decide}
-次の観測地点を決定する手段として、グリットごとの観測数とロボットの現時点からの距離を利用する。
+次の観測地点を決定する手段として、グリッドごとの観測数とロボットの現時点からの距離を利用する。
+グリッドごとの観測数をもとにより観測が少ない地点を観測することで、地図全体のグリッドを網羅することができる。
+また地図全体のグリッドを効率よく観測するためには、観測数だけでなく距離も考慮する必要がある。
+特に観測の初期段階ではほとんどのグリッドの観測数が0なので、グリッドごとの観測数だけで地点を決定してしまうと遠くの地点での観測になる可能性があり、移動時間の観点から考えると非効率的である。
+よってグリッドごとの観測数と距離の2つを考慮した決定手法をとる。
+
 本研究ではロボットを静止させ、前方6m$\times$6mの範囲でHFMを観測を行わせているため、一度の観測における観測範囲は固定である。
 その観測範囲に対応した矩形範囲内で地図の左上から右下まで探索を行い、
 矩形範囲内ごとの平均観測数$x_{o}$およびロボットの現時点からの距離$x_{d}$を求める。
@@ -158,19 +164,19 @@ HFMを更新していくためにはロボットが共有された情報を基�
 \end{figure}
 
 \subsubsection{平均観測数の計算}
-矩形範囲における平均観測数を変数として利用するためには矩形範囲内に存在する観測不可能なグリットの数を考慮する必要がある。
-観測不可能なグリットとは壁や地図外の未確認の地点である。
-そこで今回求める矩形範囲内の平均観測数は分母に矩形範囲内の観測可能なグリットの合計をとり、観測不可能グリットの影響を除去する。
+矩形範囲における平均観測数を変数として利用するためには矩形範囲内に存在する観測不可能なグリッドの数を考慮する必要がある。
+観測不可能なグリッドとは壁や地図外の未確認の地点である。
+そこで今回求める矩形範囲内の平均観測数は分母に矩形範囲内の観測可能なグリッドの合計をとり、観測不可能グリッドの影響を除去する。
 \refeqn{eqn: distance}は矩形範囲内の平均観測数を求める式である。
 
 \begin{equation}
-  平均観測数 = \frac{観測回数の合計}{観測可能なグリット数}
+  平均観測数 = \frac{観測回数の合計}{観測可能なグリッド数}
 	\label{eqn: observation}
 \end{equation}
 
 \subsubsection{距離の計算}
-距離の計算においてはグリット単位での計算を行なっている。
-本研究でも一辺0.5mのグリットを利用している。
+距離の計算においてはグリッド単位での計算を行なっている。
+本研究でも一辺0.5mのグリッドを利用している。
 \refeqn{eqn: distance}は距離の計算式である。
 ここでは$ロボットの現時点での座標を(x_0, y_0)、次の地点を(x_1,y_1)$とし表している。
 
@@ -189,10 +195,10 @@ HFMを更新していくためにはロボットが共有された情報を基�
 \subsection{シミュレーション手順}
 \label{process-simulation}
 \begin{enumerate}
-  \item グリットごとの観測数の初期化（全て0にする）
+  \item グリッドごとの観測数の初期化（全て0にする）
   \item ロボットの初期位置を決定(地図上の地点からランダムに決定)
   \item \ref{decide}項の手法により観測地点の決定
-  \item 決定した観測地点をもとにグリットごとの観測数を+1
+  \item 決定した観測地点をもとにグリッドごとの観測数を+1
 \end{enumerate}
 手順の3,4を任意の回数繰り返すことにより、地図全体の観測回数の遷移を確認することができる。
 この任意の回数のことをここでは試行回数$n$と呼ぶこととする。
@@ -217,10 +223,10 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 図\ref{fig: result of experiments}のグラフはその結果である。
 横軸が試行回数$n$、縦軸が地図全体の平均観測数である。
 地図全体の平均観測数は以下の\refeqn{eqn: average-in-map}で定義している。
-また地図全体で観測可能なグリット数はこの地図では1272箇所である。
+また地図全体で観測可能なグリッド数はこの地図では1272箇所である。
 
 \begin{equation}
-  地図全体の平均観測数 = \frac{地図全体の観測回数の合計}{地図全体の観測可能なグリット数}
+  地図全体の平均観測数 = \frac{地図全体の観測回数の合計}{地図全体の観測可能なグリッド数}
 	\label{eqn: average-in-map}
 \end{equation}
 
@@ -233,15 +239,15 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 \end{figure}
 
 この結果より距離を考慮しない場合、試行回数$n=1000$の時地図全体の平均観測数が約35回になることがわかる。
-つまりこの実験環境においておおよそ試行回数$n=30$で全てのグリットの観測を行うことができる。
-図\ref{fig: n30}は試行回数$n=30$の時のグリットごとの観測数を地図に描画したものであり、ほとんどのグリットにおいて観測数が1か2なのがわかる。
+つまりこの実験環境においておおよそ試行回数$n=30$で全てのグリッドの観測を行うことができる。
+図\ref{fig: n30}は試行回数$n=30$の時のグリッドごとの観測数を地図に描画したものであり、ほとんどのグリッドにおいて観測数が1か2なのがわかる。
 
 
 \begin{figure}[tbh]
  \centering
   \includegraphics[height=25mm]{fig/n30.eps}
   \vspace*{-4mm}
-  \caption{試行回数$n=30$}
+  \caption{State of $n=30$}
   \label{fig: n30}
 \end{figure}
 
@@ -264,16 +270,16 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 
 \subsection{観測したグリッド数の比較}
 \label{evaluate-observation}
-地図全体で観測可能なグリットは1272箇所あり、試行回数30の際に1272箇所に近いグリット数を観測するのが理想的である。
-そこで$w_d$で観測グリット数を算出し比較を行う。
-図\ref{fig: evaluate-observation}は$w_d$ごとの観測したグリット数のグラフである。
+地図全体で観測可能なグリッドは1272箇所あり、試行回数30の際に1272箇所に近いグリッド数を観測するのが理想的である。
+そこで$w_d$で観測グリッド数を算出し比較を行う。
+図\ref{fig: evaluate-observation}は$w_d$ごとの観測したグリッド数のグラフである。
 
 
 \begin{figure}[tbh]
  \centering
   \includegraphics[height=50mm]{fig/evaluate-grid.eps}
   \vspace*{-4mm}
-  \caption{Evaluation with a Number of Observed Grid}
+  \caption{Evaluation with the Number of Observed Grids}
   \label{fig: evaluate-observation}
 \end{figure}
 
@@ -281,6 +287,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 \subsection{総距離の比較}
 \label{evaluate-distance}
 地図全体の観測を効率的に行うためには、ロボットの移動時間も考慮し距離を最小限に行なっていく必要がある。
+ここでは試行回数30を行なった際の総距離を$w_d$ごとで求める。
 図\ref{fig: evaluate-distance}は$w_d$ごとの総距離のグラフである。
 
 
@@ -302,18 +309,18 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 
 前章までに行なったシミュレーションはロボットが1台として実験を行なっている。
 そこでロボットの数を増やした時の場合を想定した時のシミュレーションを行う。
-観測したグリット数が試行を繰り返すごとにどのように遷移していくかをロボットの数ごとに比較を行う。
+観測したグリッド数が試行を繰り返すごとにどのように遷移していくかをロボットの数ごとに比較を行う。
 今回ロボットの数は1$\sim$3台,試行回数$n=30,w_o=0.5,w_d=0.5$とし、シミュレーションを行なった。
 ロボットの台数によりシミュレーションを5回ずつ行い、その結果をそれぞれ平均をとったものを図\ref{fig: multirobot}のグラフにて示す。
 ロボットの台数によりシミュレーションを5回ずつ行い、その結果をそれぞれ平均したものを利用し台数ごとの比較を行う。
 図\ref{fig: each-multirobot}が台数ごとの結果、図\ref{fig: multirobot}が平均を取り比較した結果のグラフである。
-ともに横軸は試行回数$n$,縦軸は観測したグリット数となっている。
+ともに横軸は試行回数$n$,縦軸は観測したグリッド数となっている。
 
 \begin{figure}[tbh]
  \centering
-  \includegraphics[height=55mm]{fig/each-multi-robot.eps}
+  \includegraphics[height=60mm]{fig/each-multi-robot.eps}
   \vspace*{-4mm}
-  \caption{それぞれの台数での結果}
+  \caption{Each Result of the Number of Robots}
   \label{fig: each-multirobot}
 \end{figure}
 
@@ -321,13 +328,13 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=50mm]{fig/multi-robot.eps}
   \vspace*{-4mm}
-  \caption{Comparision of a Number of Robots}
+  \caption{Comparision of the Number of Robots}
   \label{fig: multirobot}
 \end{figure}
 
 
 \subsection{シミュレーションに対する考察}
-図\ref{fig: multirobot}からロボットの数が増えるほど少ない試行回数で地図全体のグリットを観測できることがわかる。
+図\ref{fig: multirobot}からロボットの数が増えるほど少ない試行回数で地図全体のグリッドを観測できることがわかる。
 これより今回提案した手法を用い複数台のロボットで観測を行うことで、効率的に地図全体のHFMの観測を行うこができることを確認することができた。
 
 
@@ -344,9 +351,9 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 \end{itemize}
 \begin{figure}[tbh]
  \centering
-  \includegraphics[height=30mm]{fig/impossible.eps}
+  \includegraphics[height=40mm]{fig/impossible.eps}
   \vspace*{-4mm}
-  \caption{同時に観測不可な地点}
+  \caption{Simultaneously Unobservable Points}
   \label{fig: impossible}
 \end{figure}
 
@@ -358,25 +365,18 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 
 \bibitem{kazuyuki}
 Kazuyuki Morioka, Joo-Ho Lee, Hideki Hashimoto, "Human following mobile robot in a distributed intelligent sensor network", IEEE Transactions on Industrial Electronics, Vol.51, No.1, pp.229-237, 2004.
-
 \bibitem{maeyama}
 前山祥一, 西本雅規, 渡辺桂吾, "知能化空間における人の位置観 測に基づく通路地図作成と移動ロボットの経路計画への適用", 計測自動制御学会論文集, vol.47, pp .631-639, 2011.
-
 \bibitem{nitta}
 新田次郎, 佐々木洋子, 溝口博, 加賀美聡, "人環境で移動するロ ボットの通行者情報地図による経路計画手法", ロボティクス・ メカトロニクス講演会講演概要集, 1P2-S01(1)-1P2-S01(4), 2015.
-
+\bibitem{toyota}
+小山渚, 藤井亮暢, "準静的環境下での複数ロボットによる地図更新", SI2018. 2B1-05, 2018.
 \bibitem{robo2018}
 横山光希, 森岡一幸, "ブロックチェーンを用いた知能化空間のためのセンサデータ共有システム", ROBOMECH2018. 2A2-D08, 2018.
-
 \bibitem{si2018}
 横山光希, 森岡一幸, "ブロックチェーンを用いた移動ロボットのための環境地図共有システム", SI2018. 2D4-06, 2018.
-
 \bibitem{kato}
 加藤勇気, 森岡一幸, “移動ロボットによる人間観測に基づく通行者情報の作成と柔軟な経路計画”, ROBOMECH2017, 2A2-D08, 2017.
-
-
-
-
 \end{thebibliography}
 
 \normalsize
