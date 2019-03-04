@@ -130,9 +130,9 @@ files:
       $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
     type: ParsedYAML
   template_robomech_utf8.tex:
-    timeStamp: 2019-03-04T06:22:38.466Z
+    timeStamp: 2019-03-04T06:34:23.496Z
     jobNames: []
-    hash: FbLu91SnXl3oS0NFsjkWNhU3XGuBZviqEh0hiwnyrts=
+    hash: PPI7IE341/J5k2jP6mJlE2s8Ve4GkqrNGjsrbpLkCu0=
     type: LaTeX
     subType: jsarticle
   /Users/koki/Library/Application Support/dicy/config.yaml:
@@ -143,9 +143,9 @@ files:
     jobNames: []
     type: Nil
   template_robomech_utf8.log:
-    timeStamp: 2019-03-04T06:22:16.268Z
+    timeStamp: 2019-03-04T06:34:10.527Z
     jobNames: []
-    hash: GS6yPS1oR2DX3ZwUaV0hWqiqITL5PyJOOKdSnNnK9Hc=
+    hash: IB1ND15KoOKhFMT7YfF3FeI7BUleZa+yi1nsMLLtTSs=
     type: LaTeXLog
     subType: e-upTeX
   template_robomech_utf8.fls-ParsedFileListing:
@@ -1147,13 +1147,13 @@ files:
       calls: []
     type: ParsedLaTeXLog
   template_robomech_utf8.dvi:
-    timeStamp: 2019-03-04T06:22:38.952Z
+    timeStamp: 2019-03-04T06:34:23.954Z
     jobNames: []
     type: DeviceIndependentFile
   template_robomech_utf8.pdf:
-    timeStamp: 2019-03-04T06:22:45.679Z
+    timeStamp: 2019-03-04T06:34:30.596Z
     jobNames: []
-    hash: 0mONy/XkBAuf5+wP7rfOWmUF8DstNQBGsNY+kN0g41Q=
+    hash: rQ+zAvVQLCYHmwfbFFTT3aAQD+mh85oi+I3IzThmyrU=
     type: PortableDocumentFormat
 rules:
   - name: ApplyOptions

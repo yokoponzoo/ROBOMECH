@@ -42,8 +42,8 @@ This paper introduces a map sharing system based on block chain for mobile robot
 しかしこの手法ではセンサノードを空間内に設置する際に、設置位置などの詳細な設定を行う必要があるという問題点も存在する。
 
 そこで本研究では環境にセンサノードを固定させるのではなく、同一空間上に存在する複数のロボットがセンサデータを取得・共有・更新を行う枠組みの提案および開発を目的としている。
-複数台の移動ロボットによる地図更新手法の提案し開発に取り組んでいる事例が報告されている\cite{toyota}。
-著者らはセンサデータ共有の枠組みとしてブロックチェーンを用いたシステム提案し、開発に着手してきた\cite{robo2018}。
+複数台の移動ロボットによる地図更新手法の提案をし開発に取り組んでいる事例が報告されている\cite{toyota}。
+著者らはセンサデータ共有の枠組みとしてブロックチェーンを用いたシステムを提案し、開発に着手してきた\cite{robo2018}。
 またロボットが共有するセンサデータとしてHFMを用いたシステムを提案し、開発を行なっている\cite{si2018}\cite{kato}。
 複数台の移動ロボットを同一空間上に存在させ、HFMを取得し共有するロボットと共有されたHFMを活用するロボットの開発を行なった。
 しかしこのシステムではHFMを共有し、他のロボットが活用する流れの動作確認を目的としており、HFMを取得しにいく際には人間が手動でロボットを移動させていた。
@@ -145,7 +145,8 @@ HFMを更新していくためにはロボットが共有された情報を基�
 \end{equation}
 
 空間上における全ての矩形範囲での平均観測数と距離を計算したのち、それぞれを標準化したものを$x_o,x_d$として用いる。
-これは$value$の計算時に、平均観測数と距離の絶対値の違いの影響を考慮したためである。
+ここでの標準化とは平均を0、分散を1にすることをいう。
+これは$value$の計算時に、平均観測数と距離の絶対値の違いの影響を考慮しスケールを合わせるために行なっている。
 また$w_o,w_d$の範囲は0$\sim$1であり、\refeqn{eqn: weight}の条件を満たしている。
 
 \begin{equation}
@@ -325,7 +326,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 
 \begin{figure}[tbh]
  \centering
-  \includegraphics[height=50mm]{fig/multi-robot.eps}
+  \includegraphics[height=45mm]{fig/multi-robot.eps}
   \vspace*{-4mm}
   \caption{Comparision of  the number of observation grids}
   \label{fig: multirobot}
@@ -350,7 +351,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 \end{itemize}
 \begin{figure}[tbh]
  \centering
-  \includegraphics[height=40mm]{fig/impossible.eps}
+  \includegraphics[height=37mm]{fig/impossible.eps}
   \vspace*{-4mm}
   \caption{Problem of updating unobservable points}
   \label{fig: impossible}
@@ -361,7 +362,6 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
 
 \footnotesize
 \begin{thebibliography}{99}
-
 \bibitem{kazuyuki}
 Kazuyuki Morioka, Joo-Ho Lee, Hideki Hashimoto, "Human following mobile robot in a distributed intelligent sensor network", IEEE Transactions on Industrial Electronics, Vol.51, No.1, pp.229-237, 2004.
 \bibitem{maeyama}
@@ -377,6 +377,5 @@ Kazuyuki Morioka, Joo-Ho Lee, Hideki Hashimoto, "Human following mobile robot in
 \bibitem{kato}
 加藤勇気, 森岡一幸, “移動ロボットによる人間観測に基づく通行者情報の作成と柔軟な経路計画”, ROBOMECH2017, 2A2-D08, 2017.
 \end{thebibliography}
-
 \normalsize
 \end{document}

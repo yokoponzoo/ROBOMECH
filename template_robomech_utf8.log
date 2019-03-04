@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  4 MAR 2019 15:22
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.12.15)  4 MAR 2019 15:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -237,9 +237,8 @@ File: fig/each-multi-robot.eps Graphic file (type eps)
 File: fig/multi-robot.eps Graphic file (type eps)
 <fig/multi-robot.eps>
 File: fig/impossible.eps Graphic file (type eps)
-<fig/impossible.eps> [4] [5
-
-] (/Users/koki/src/lab/ROBOMECH2019/template_robomech_utf8.aux) ) 
+<fig/impossible.eps> [4] (/Users/koki/src/lab/ROBOMECH2019/template_robomech_ut
+f8.aux) ) 
 Here is how much of TeX's memory you used:
  966 strings out of 493215
  12354 string characters out of 6144071
@@ -249,4 +248,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  25i,14n,20p,537b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template_robomech_utf8.dvi (5 pages, 30352 bytes).
+Output written on template_robomech_utf8.dvi (4 pages, 30456 bytes).
