@@ -20,9 +20,8 @@
 \makeatother
 
 \abstract{ \small
-By acquiring, sharing and updating sensor data in space on multiple robots and utilizing it with other robots, it is possible to efficiently recognize surrounding information and lead to better decision making.
-In this research, we have developed a sensor data sharing system for mobile robot using block chain sharing Human Frequency Map as sensor data.
-In this paper, we describe a method of updating multiple robot Human Frequency Map, and created a simulator and evaluated the method.
+Currently, many of mobile robots are stand-alone. The robots acquire and utilize sensor data and map information by themselves. Sharing of sensor data and map information by networked multiple robots will be efficient for recognition and decision making in large scale environments.
+This paper introduces a map sharing system based on block chain for mobile robots. In the proposed system, multiple robots share Human Frequency Maps which include human existence frequency in each grid of the maps human. Especially, this paper focuses on updating Human Frequency Maps based by multiple mobile robots. We developed a simulator for map sharing and updating. As a result of simulation, map sharing and updating can be achieved, based on evaluating observation number and distance to each grid.
 }
 
 \date{} % 日付を出力しない
@@ -86,7 +85,7 @@ Human Frequency Mapとは占有格子地図をグリッドに分けた時にグ�
  \centering
   \includegraphics[height=50mm]{fig/proposedsystem.eps}
   \vspace*{-4mm}
-  \caption{Proposed System}
+  \caption{Proposed system}
   \label{fig: proposedsystem}
 \end{figure}
 
@@ -119,7 +118,7 @@ HFMを更新していくためにはロボットが共有された情報を基�
  \centering
   \includegraphics[height=40mm]{fig/sharefile.eps}
   \vspace*{-4mm}
-  \caption{Share the Number of Observation}
+  \caption{Sharing the number of observations}
   \label{fig: sharefile}
 \end{figure}
 
@@ -159,7 +158,7 @@ HFMを更新していくためにはロボットが共有された情報を基�
  \centering
   \includegraphics[height=45mm]{fig/decisionpoint.eps}
   \vspace*{-4mm}
-  \caption{Decision of Obsevation Point}
+  \caption{Decision of obsevation point}
   \label{fig: value-method}
 \end{figure}
 
@@ -210,7 +209,7 @@ HFMを更新していくためにはロボットが共有された情報を基�
  \centering
   \includegraphics[height=55mm]{fig/example.eps}
   \vspace*{-4mm}
-  \caption{Example of Simulation}
+  \caption{Example of updating maps on simulation}
   \label{fig: example of simulation}
 \end{figure}
 
@@ -234,7 +233,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=40mm]{fig/n1000.eps}
   \vspace*{-4mm}
-  \caption{Result of Experiment}
+  \caption{Average observation number against trials of robot movement}
   \label{fig: result of experiments}
 \end{figure}
 
@@ -247,7 +246,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=25mm]{fig/n30.eps}
   \vspace*{-4mm}
-  \caption{State of $n=30$}
+  \caption{Observation number in each map at $n=30$}
   \label{fig: n30}
 \end{figure}
 
@@ -279,7 +278,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=50mm]{fig/evaluate-grid.eps}
   \vspace*{-4mm}
-  \caption{Evaluation with the Number of Observed Grids}
+  \caption{Evaluation with the number of observed grids}
   \label{fig: evaluate-observation}
 \end{figure}
 
@@ -295,7 +294,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=50mm]{fig/evaluate-distance.eps}
   \vspace*{-4mm}
-  \caption{Evaluation with Total Distance}
+  \caption{Evaluation with total distance}
   \label{fig: evaluate-distance}
 \end{figure}
 
@@ -320,7 +319,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=60mm]{fig/each-multi-robot.eps}
   \vspace*{-4mm}
-  \caption{Each Result of the Number of Robots}
+  \caption{Observed grids according to the number of robots}
   \label{fig: each-multirobot}
 \end{figure}
 
@@ -328,7 +327,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=50mm]{fig/multi-robot.eps}
   \vspace*{-4mm}
-  \caption{Comparision of the Number of Robots}
+  \caption{Comparision of  the number of observation grids}
   \label{fig: multirobot}
 \end{figure}
 
@@ -353,7 +352,7 @@ $w_o=1.0,w_d=0.0$とすることで距離を無視し、観測回数だけを考
  \centering
   \includegraphics[height=40mm]{fig/impossible.eps}
   \vspace*{-4mm}
-  \caption{Simultaneously Unobservable Points}
+  \caption{Problem of updating unobservable points}
   \label{fig: impossible}
 \end{figure}
 
